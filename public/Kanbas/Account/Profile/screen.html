@@ -1,89 +1,112 @@
-<table>
-    <tr>
-        <!-- First Column -->
-        <td style="vertical-align: top;">
-            <ul>
-                <li>
-                    <a href="/Kanbas/Account/Profile/screen.html">Account</a>
-                </li>
-                <li>
-                    <a href="#">Dashboard</a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Courses/Home/screen.html">Courses</a>
-                </li>
-                <li>
-                    <a href="#">Calendar</a>
-                </li>
-                <li>
-                    <a href="#">Inbox</a>
-                </li>
-                <li>
-                    <a href="#">History</a>
-                </li>
-                <li>
-                    <a href="#">Studio</a>
-                </li>
-                <li>
-                    <a href="#">Commons</a>
-                </li>
-                <li>
-                    <a href="#">Help</a>
-                </li>
-            </ul>
-        </td>
+<html>
 
-        <!-- Second Column -->
-        <td style="vertical-align: top; padding-right: 20px">
-            <ul>
-                <li>
-                    <a href="#">Notifications</a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Account/Profile/screen.html">Profile</a>
-                </li>
-                <li>
-                    <a href="#">Files</a>
-                </li>
-                <li>
-                    <a href="#">Settings</a>
-                </li>
-                <li>
-                    <a href="#">ePortfolios</a>
-                </li>
-                <li>
-                    <a href="#">Shared Content</a>
-                </li>
-                <li>
-                    <a href="#">The Hub</a>
-                </li>
-                <li>
-                    <a href="#">Qwickly Course Tools</a>
-                </li>
-                <li>
-                    <a href="#">Global Announcements</a>
-                </li>
-            </ul>
-        </td>
+<head>
+    <link rel="stylesheet" href="/Kanbas/styles.css" />
+    <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css" rel="stylesheet" />
+</head>
 
-        <!-- Third Column -->
-        <td>
-            <label>Daniel Lee's Profile</label>
-            <hr>
-            <h2 style="display: flex; justify-content: space-between; align-items: center;"><span>Daniel Lee</span>
-                <button type="button" onclick="window.location.href='/Kanbas/Account/Profile/Edit/screen.html';">Edit
-                    Profile</button>
-            </h2>
-            </br>
+<body>
+    <table>
+        <tr>
+            <!-- First Column -->
+            <td style="vertical-align: top;">
+                <ul class="wd-kanbas-navigation">
+                    <li><a href="http://northeastern.edu"><br>N</a></li>
+                    <li class="wd-active">
+                        <a href="/Kanbas/Account/Profile/screen.html">
+                            <i class="fa fa-user" style="color: black"></i><br>Account</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Dashboard/screen.html">
+                            <i class="fa fa-tachometer"></i><br>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Courses/Home/screen.html">
+                            <i class="fa fa-book"></i><br>Courses</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-calendar"></i><br>Calendar</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Inbox/index.html">
+                            <i class="fa fa-envelope-open-text"></i><br>Inbox</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/History/index.html">
+                            <i class="fa fa-clock"></i><br>History</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Studio/index.html">
+                            <i class="fa fa-camera-retro"></i><br>Studio</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Commons/index.html">
+                            <i class="fa fa-right-from-bracket"></i><br>Commons</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Help/index.html">
+                            <i class="fa fa-circle-question"></i><br>Help</a>
+                    </li>
+                </ul>
+            </td>
 
-            <h3>Contact</h3>
-            <p>No registered services, you can add some on the <a href="#">settings</a> page.</p>
+            <!-- Second Column -->
+            <td style="vertical-align: top; padding-right: 20px">
+                <ul>
+                    <li>
+                        <a href="#">Notifications</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Account/Profile/screen.html">Profile</a>
+                    </li>
+                    <li>
+                        <a href="#">Files</a>
+                    </li>
+                    <li>
+                        <a href="#">Settings</a>
+                    </li>
+                    <li>
+                        <a href="#">ePortfolios</a>
+                    </li>
+                    <li>
+                        <a href="#">Shared Content</a>
+                    </li>
+                    <li>
+                        <a href="#">The Hub</a>
+                    </li>
+                    <li>
+                        <a href="#">Qwickly Course Tools</a>
+                    </li>
+                    <li>
+                        <a href="#">Global Announcements</a>
+                    </li>
+                </ul>
+            </td>
 
-            <h3>Biography</h3>
-            <p>Currently studying computer science, previously worked in investment banking.</p>
+            <!-- Third Column -->
+            <td>
+                <label>Daniel Lee's Profile</label>
+                <hr>
+                <h2 style="display: flex; justify-content: space-between; align-items: center;"><span>Daniel Lee</span>
+                    <button type="button"
+                        onclick="window.location.href='/Kanbas/Account/Profile/Edit/screen.html';">Edit
+                        Profile</button>
+                </h2>
+                </br>
 
-            <h3>Links</h3>
-            <a href="#">YouTube </a>
-        </td>
-    </tr>
-</table>
+                <h3>Contact</h3>
+                <p>No registered services, you can add some on the <a href="#">settings</a> page.</p>
+
+                <h3>Biography</h3>
+                <p>Currently studying computer science, previously worked in investment banking.</p>
+
+                <h3>Links</h3>
+                <a href="#">YouTube </a>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
