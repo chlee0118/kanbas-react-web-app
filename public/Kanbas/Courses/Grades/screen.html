@@ -138,12 +138,16 @@
                 <button type="button" class="btn btn-outline-primary btn-sm me-2">
                     <i class="fa-solid fa-file-import"></i>&nbsp;Import
                 </button>
-                <div class="d-inline-block me-2">
-                    <select id="export" class="form-select form-select-sm">
-                        <option selected value="PUBLISHALL">Export</option>
-                        <option value="dummy">OPTION TWO</option>
-                    </select>
-                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="fa-solid fa-file-export"></i> Export
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Option Two</a></li>
+                        <li><a class="dropdown-item" href="#">Option Three</a></li>
+                    </ul>
+                </div>&nbsp;
                 <button type="button" class="btn btn-outline-secondary btn-sm">
                     <i class="fa-solid fa-gear"></i>
                 </button>
@@ -341,6 +345,7 @@
         </div>
     </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
