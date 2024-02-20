@@ -1,0 +1,34 @@
+.status-container {
+    background-color: lightgray;
+}
+  
+.status-item {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa; 
+    border: 1px solid #ddd; 
+    border-radius: 4px;
+    padding: 8px; 
+    margin-bottom: 8px; 
+    cursor: pointer; 
+    text-align: left; 
+}
+  
+.status-icon {
+    margin-right: 10px;
+}
+  
+.text-success {
+    color: #28a745;
+}
+  
+.btn {
+    width: 100%;
+    color: inherit;
+    text-align: left;
+    border: none;
+    background: none;
+    box-shadow: none;
+}
+  
+  

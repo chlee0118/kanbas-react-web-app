@@ -1,0 +1,23 @@
+.course-header {
+    display: flex;
+    align-items: center;
+    color: red;
+}
+  
+.layout-container {
+    display: flex;
+}
+  
+.course-content {
+    flex-grow: 1;
+}
+  
+.course-title {
+    margin-right: 10px;
+}
+
+.breadcrumb {
+    color: gray;
+    margin-left: 10px;
+    margin-top: 15px;
+}
