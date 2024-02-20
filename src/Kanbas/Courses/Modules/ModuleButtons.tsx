@@ -1,4 +1,5 @@
 import { FaEllipsisV, FaCheckCircle, FaPlus } from 'react-icons/fa';
+import './ModuleButtons.css';
 
 const ModuleButtons = () => {
   return (
