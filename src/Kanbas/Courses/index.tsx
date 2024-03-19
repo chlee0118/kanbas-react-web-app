@@ -9,7 +9,7 @@ import AssignmentEditor from "./Assignments/Editor";
 import Grades from "./Grades";
 import './index.css';
 
-function Courses() {
+function Courses({ courses }: { courses: any[]; }) {
   const { courseId } = useParams();
   const location = useLocation();
   const course = courses.find((course) => course._id === courseId);
@@ -40,6 +40,7 @@ function Courses() {
             <Route path="Piazza" element={<h1>Piazza</h1>} />
             <Route path="Grades" element={<Grades />} />
             <Route path="Assignments" element={<Assignments/>} />
+            <Route path="Assignments/new" element={<AssignmentEditor/>}/>
             <Route path="Assignments/:assignmentId" element={<AssignmentEditor/>}/>
           </Routes>
         </div>

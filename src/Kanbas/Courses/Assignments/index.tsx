@@ -1,12 +1,23 @@
 import { FaPlusCircle, FaEllipsisV, FaFileInvoice } from "react-icons/fa";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { assignments } from "../../Database";
 import './index.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteAssignment } from './reducer';
 
 function Assignments() {
   const { courseId } = useParams();
-  const assignmentList = assignments.filter(
-    (assignment) => assignment.course === courseId);
+  const navigate = useNavigate();
+  const assignmentList = useSelector((state: any) => state.assignments.assignments.filter(
+    (assignment: any) => assignment.course === courseId));
+
+  const dispatch = useDispatch();
+  const handleDelete = (assignmentId: any) => {
+    const isConfirmed = window.confirm('Are you sure you want to remove this assignment?');
+    if (isConfirmed) {
+      dispatch(deleteAssignment(assignmentId));
+    }
+  };
   
   return (
     <>
@@ -39,12 +50,14 @@ function Assignments() {
           <span><FaEllipsisV className="icon-spacing" /> ASSIGNMENTS</span>
           <span className="float-end">
             <span className="border rounded px-3 py-1">40% of Total</span>
-            <FaPlusCircle className="icon-spacing" />
+            <button onClick={() => navigate(`/Kanbas/Courses/${courseId}/Assignments/new`)} className="add-assignment-btn">
+              <FaPlusCircle className="icon-spacing" /> Assignment
+            </button>
             <FaEllipsisV className="icon-spacing" />
           </span>
         </div>
         <ul className="list-group wd-modules">
-          {assignmentList.map((assignment) => (
+          {assignmentList.map((assignment: any) => (
             <li className="list-group-item assignment-item">
               <FaEllipsisV className="icon-spacing" />
               <FaFileInvoice className="text-success icon-spacing" />
@@ -52,6 +65,9 @@ function Assignments() {
                     className="assignment-link">
                 {assignment.title}
               </Link>
+              <button onClick={() => handleDelete(assignment._id)} className="delete-assignment-btn">
+                Delete
+              </button>
               <FaEllipsisV className="icon-spacing float-end" />
             </li>
           ))}
