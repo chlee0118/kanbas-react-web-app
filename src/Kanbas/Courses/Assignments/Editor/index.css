@@ -1,0 +1,76 @@
+.assignment-editor {
+    padding: 20px;
+  }
+  
+  .breadcrumb {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  
+  .breadcrumb a {
+    text-decoration: none;
+    color: blue;
+  }
+  
+  .status {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  
+  .published-icon {
+    color: green;
+    margin-right: 5px;
+  }
+  
+  .options-icon {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  
+  .actions .btn {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    margin-left: 10px;
+    margin-right: 5px;
+    white-space: nowrap;
+    max-width: 100px;
+  }
+  
+  .btn-cancel {
+    color: black;
+    background-color: white;
+    border: 1px solid grey;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .btn-cancel:hover {
+    background-color: white; /* remain white on hover */
+    color: black; /* text remains black on hover */
+    border: 1px solid grey; /* border remains grey on hover */
+  }
+  
+  .btn-danger {
+    background-color: red;
+    color: white;
+    border-color: red;
+  }
+  
+  .btn-danger:hover {
+    background-color: red; /* remain red on hover */
+    color: white; /* text remains white on hover */
+  }
+  
+  .form-control,
+  .actions .btn {
+    flex: 0 0 auto;
+  }  

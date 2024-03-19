@@ -1,0 +1,71 @@
+.table {
+    margin-top: 20px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  
+  .table thead th {
+    background-color: whitesmoke;
+    color: black;
+    font-weight: bold;
+    border-bottom: 2px solid silver;
+  }
+  
+  .table thead th:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  .table thead th:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  .table tbody td {
+    border-bottom: 1px solid silver;
+  }
+  
+  .table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .table tbody td:first-child {
+    font-weight: bold;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: gainsboro;
+  }
+  
+  .filter-dropdown {
+    margin-right: 10px;
+  }
+  
+  .import-button,
+  .export-button {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 5px;
+  }
+  
+  .import-button:hover,
+  .export-button:hover {
+    background-color: mediumblue;
+  }
+  
+  .apply-filters-button {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  
+  .apply-filters-button:hover {
+    background-color: darkgreen;
+  }  

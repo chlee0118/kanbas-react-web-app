@@ -1,0 +1,62 @@
+.module-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .btn-outline-secondary {
+    background-color: #fff;
+    border-color: #ccc;
+  }
+  
+  .btn-outline-secondary:hover,
+  .btn-outline-secondary:focus {
+    background-color: #eee;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+  }
+  
+  .btn-danger:hover,
+  .btn-danger:focus {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  
+  .dropdown-toggle::after {
+    display: none;
+  }
+  
+  .dropdown-menu {
+    min-width: auto;
+  }
+  
+  .fa-ellipsis-v {
+    font-size: 24px;
+    color: #6c757d;
+    cursor: pointer;
+  }
+  

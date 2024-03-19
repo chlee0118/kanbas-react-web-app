@@ -1,0 +1,13 @@
+.home-container {
+    display: flex;
+    justify-content: space-between;
+}
+  
+.modules-container {
+  flex: 1;
+  margin-right: 20px;
+}
+  
+.status-container {
+    width: 300px;
+} 
