@@ -57,7 +57,6 @@ function AssignmentEditor() {
         course: courseId,
         _id: assignment ? assignment._id : new Date().getTime().toString(),
     };
-
     if (assignment) {
         handleUpdateAssignment();
     } else {
