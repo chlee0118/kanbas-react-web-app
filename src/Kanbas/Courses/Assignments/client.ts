@@ -1,6 +1,7 @@
 import axios from 'axios';
-const COURSES_API = "https://kanbas-node-server-app-apg1.onrender.com/api/courses";
-const ASSIGNMENTS_API = "https://kanbas-node-server-app-apg1.onrender.com/api/assignments"
+const API_BASE = process.env.REACT_APP_API_BASE;
+const COURSES_API = `${API_BASE}/api/courses`;
+const ASSIGNMENTS_API = `${API_BASE}/api/assignments`;
 
 export const createAssignment = async (courseId: any, assignment: any) => {
   const response = await axios.post(`${COURSES_API}/${courseId}/assignments`, assignment);
