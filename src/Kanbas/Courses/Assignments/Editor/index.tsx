@@ -4,20 +4,16 @@ import './index.css'
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addAssignment, updateAssignment } from '../reducer';
+import * as client from "../client";
 
 function AssignmentEditor() {
   const { assignmentId } = useParams();
   const assignment = useSelector((state: any) =>
     state.assignments.assignments.find((assignment: any) => assignment._id === assignmentId)
-  );  
+  );
   const { courseId } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  const handleSave = () => {
-    console.log("Actually saving assignment TBD in later assignments");
-    navigate(`/Kanbas/Courses/${courseId}/Assignments`);
-  };
 
   const [assignmentDetails, setAssignmentDetails] = useState({
     title: '',
@@ -27,6 +23,12 @@ function AssignmentEditor() {
     availableFromDate: '',
     availableUntilDate: '',
   });
+
+  const handleAddAssignment = () => {
+    client.createAssignment(courseId, assignmentDetails).then((newAssignment) => {
+      dispatch(addAssignment(newAssignment));
+    });
+  };
 
   useEffect(() => {
     if (assignment) {
@@ -42,6 +44,12 @@ function AssignmentEditor() {
     }));
   };
 
+  const handleUpdateAssignment = async () => {
+    await client.updateAssignment(assignment._id, assignmentDetails);
+    dispatch(updateAssignment({...assignmentDetails, _id: assignment._id}));
+    navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+  };
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const payload = {
@@ -51,9 +59,9 @@ function AssignmentEditor() {
     };
 
     if (assignment) {
-        dispatch(updateAssignment(payload));
+        handleUpdateAssignment();
     } else {
-        dispatch(addAssignment(payload));
+        handleAddAssignment();
     }
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
 };
@@ -100,7 +108,7 @@ function AssignmentEditor() {
           <input type="date" name="availableUntilDate" value={assignmentDetails.availableUntilDate} onChange={handleChange} />
         </label>
       </div>
-      <button type="submit">Save</button>
+      <button type="submit">Save/Add</button>
       <button type="button" onClick={handleCancel}>Cancel</button>
     </form>
   );

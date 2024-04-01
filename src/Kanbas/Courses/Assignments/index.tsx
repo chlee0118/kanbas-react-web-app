@@ -1,9 +1,11 @@
+import React, { useEffect, useState } from "react";
 import { FaPlusCircle, FaEllipsisV, FaFileInvoice } from "react-icons/fa";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { assignments } from "../../Database";
 import './index.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteAssignment } from './reducer';
+import { deleteAssignment, setAssignments } from './reducer';
+import * as client from "./client";
 
 function Assignments() {
   const { courseId } = useParams();
@@ -12,12 +14,28 @@ function Assignments() {
     (assignment: any) => assignment.course === courseId));
 
   const dispatch = useDispatch();
-  const handleDelete = (assignmentId: any) => {
+  // const handleDelete = (assignmentId: any) => {
+  //   const isConfirmed = window.confirm('Are you sure you want to remove this assignment?');
+  //   if (isConfirmed) {
+  //     dispatch(deleteAssignment(assignmentId));
+  //   }
+  // };
+  const handleDeleteAssignment = (assignmentId: string) => {
     const isConfirmed = window.confirm('Are you sure you want to remove this assignment?');
     if (isConfirmed) {
-      dispatch(deleteAssignment(assignmentId));
+      client.deleteAssignment(assignmentId).then((status) => {
+        dispatch(deleteAssignment(assignmentId));
+      });
     }
   };
+
+  useEffect(() => {
+    client.findAssignmentsForCourse(courseId)
+      .then((assignments) =>
+        dispatch(setAssignments(assignments))
+    );
+  }, [courseId]);
+
   
   return (
     <>
@@ -65,7 +83,7 @@ function Assignments() {
                     className="assignment-link">
                 {assignment.title}
               </Link>
-              <button onClick={() => handleDelete(assignment._id)} className="delete-assignment-btn">
+              <button onClick={() => handleDeleteAssignment(assignment._id)} className="delete-assignment-btn">
                 Delete
               </button>
               <FaEllipsisV className="icon-spacing float-end" />
