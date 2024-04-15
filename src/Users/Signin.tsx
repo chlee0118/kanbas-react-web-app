@@ -8,8 +8,12 @@ export default function Signin() {
   });
   const navigate = useNavigate();
   const signin = async () => {
-    await client.signin(credentials);
-    navigate("/Kanbas/Account/Profile");
+    try {
+      await client.signin(credentials);
+      navigate("/Kanbas/Account/Profile");
+    } catch (error) {
+      console.error('Error signing in:', error);
+    }
   };
   return (
     <div>
