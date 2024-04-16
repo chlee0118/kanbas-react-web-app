@@ -11,7 +11,7 @@ import Account from "./Account";
 const API_BASE = process.env.REACT_APP_API_BASE;
 
 function Kanbas() {
-  const COURSES_API = "https://kanbas-node-server-app-apg1.onrender.com/api/courses";
+  const COURSES_API = `${API_BASE}/api/courses`;
   const [courses, setCourses] = useState<any[]>([]);
   const [course, setCourse] = useState({
     _id: "1234", name: "New Course", number: "New Number",
